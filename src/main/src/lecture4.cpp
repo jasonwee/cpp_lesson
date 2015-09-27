@@ -46,7 +46,7 @@ void lecture4::learnArray() {
     twoDimArray[4][3] = 8;
 
     // another multi dimensional array declaration.
-    int twoDimArray[2][4] = { { 6, 0, 9, 6 } , { 2, 0, 1, 1 } };
+    int twoDimArray1[2][4] = { { 6, 0, 9, 6 } , { 2, 0, 1, 1 } };
 
     // \0 is null character.
     char helloworld[] = { 'H', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!', '\0' };

@@ -35,8 +35,10 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/lecture4.h" />
+		<Unit filename="include/lecture5.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/lecture4.cpp" />
+		<Unit filename="src/lecture5.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
