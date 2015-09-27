@@ -17,6 +17,7 @@ lecture6::lecture6()
     offsetVector(xStart, xEnd, yStart, yEnd, 1.0, 1.5);
     printVector(xStart, xEnd, yStart, yEnd);
 
+    /*
     MITStudent student1;
     MITStudent student2;
 
@@ -30,6 +31,7 @@ lecture6::lecture6()
     cout << "student1 id is " << student1.studentID << endl;
     cout << "student2 name is " << student2.name << endl;
     cout << "student2 id is " << student2.studentID << endl;
+    */
 
 
 }
