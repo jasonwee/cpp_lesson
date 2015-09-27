@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Integer.h" />
 		<Unit filename="include/Polygon.h" />
 		<Unit filename="include/Rectangle.h" />
 		<Unit filename="include/Triangle.h" />
@@ -41,6 +42,7 @@
 		<Unit filename="include/lecture5.h" />
 		<Unit filename="include/lecture6.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Integer.cpp" />
 		<Unit filename="src/Polygon.cpp" />
 		<Unit filename="src/Rectangle.cpp" />
 		<Unit filename="src/Triangle.cpp" />
