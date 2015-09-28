@@ -66,9 +66,9 @@ int main()
     */
 
     // TODO, this canot compile, why?
-    lecture9 <int> lec9;
-    lec9.setValue(3);
-    cout << lec9.getX() << endl;
+    //lecture9 <int> lec9;
+    //lec9.setValue(3);
+    //cout << lec9.getX() << endl;
     //lec9.setValue(1);
     //cout << lec9.getX() << endl;
 
