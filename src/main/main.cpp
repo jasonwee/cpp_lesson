@@ -2,6 +2,7 @@
 #include <lecture4.h>
 #include <lecture5.h>
 #include <lecture6.h>
+#include <lecture9.h>
 #include "Triangle.h"
 #include "Rectangle.h"
 #include "Integer.h"
@@ -36,6 +37,7 @@ int main()
     */
 
     // lesson 8
+    /*
     Integer int1(12);
     int1.printV();
 
@@ -61,9 +63,14 @@ int main()
 
     int *arr1 = new int[numItems]; // this is correct.
     delete[] arr1;
+    */
 
-
-
+    // TODO, this canot compile, why?
+    lecture9 <int> lec9;
+    lec9.setValue(3);
+    cout << lec9.getX() << endl;
+    //lec9.setValue(1);
+    //cout << lec9.getX() << endl;
 
 
     cout << "Hello world!" << endl;
