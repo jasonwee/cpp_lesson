@@ -6,6 +6,7 @@
 #include "Triangle.h"
 #include "Rectangle.h"
 #include "Integer.h"
+#include "Box.h"
 
 using namespace std;
 
@@ -73,7 +74,30 @@ int main()
     //cout << lec9.getX() << endl;
 
 
-    cout << "Hello world!" << endl;
+    //cout << "Hello world!" << endl;
+    //return 0;
+
+    Box box1;  // declare box1 of type box
+    Box box2;  // declare box2 of type box
+    double volume = 0.0; // store the volume of a box here
+
+    // bot 1 specification
+    box1.height = 5.0;
+    box1.length = 6.0;
+    box1.breadth = 7.0;
+
+    // box 2 specification
+    box2.height = 10.0;
+    box2.length = 12.0;
+    box2.breadth = 13.0;
+
+    // volume of box 1
+    volume = box1.height * box1.length * box1.breadth;
+    cout << "Volume of Box 1: " << volume <<endl;
+
+    // volume of box2
+    volume = box2.height * box2.length * box2.breadth;
+    cout << "volume of box2 : " << volume << endl;
     return 0;
 }
 
