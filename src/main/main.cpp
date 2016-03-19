@@ -77,6 +77,7 @@ int main()
     //cout << "Hello world!" << endl;
     //return 0;
 
+    /*
     Box box1;  // declare box1 of type box
     Box box2;  // declare box2 of type box
     double volume = 0.0; // store the volume of a box here
@@ -98,6 +99,50 @@ int main()
     // volume of box2
     volume = box2.height * box2.length * box2.breadth;
     cout << "volume of box2 : " << volume << endl;
+    */
+
+    struct Employee {
+        short id;
+        int age;
+        double wage;
+    };
+
+    Employee jason;
+    Employee chloe;
+
+    jason.id = 123;
+    jason.age = 34;
+    jason.wage = 456.78;
+
+    chloe.id = 124;
+    chloe.age = 34;
+    chloe.wage = 789.91;
+
+    int totalAge = jason.age + chloe.age;
+
+    if (jason.wage > chloe.wage)
+        cout << "jason make more than chloe\n";
+    else if (jason.wage < chloe.wage)
+        cout << "jason make less than chloe\n";
+    else
+        cout << "jason and frank make the same amount\n";
+
+    // jason got a promotion
+    jason.wage += 2.50;
+
+    // today is chloe birthday
+    ++chloe.age;
+
+    // another way of initializing
+    Employee oli = {125, 35, 987.12};
+
+    Employee alec = {126, 33}; // alec.wage = 0.0 default initializaiton.
+
+    // initalizing in c++ 11
+    //Employee oli { 125, 35, 987.12};
+    //Employee alec {126, 33};
+
+
     return 0;
 }
 
