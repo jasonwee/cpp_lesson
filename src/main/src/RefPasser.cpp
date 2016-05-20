@@ -4,7 +4,7 @@ class SimpleCat
 {
 public:
   SimpleCat();
-  SipmleCat(SimpleCat&);
+  SimpleCat(SimpleCat&);
   ~SimpleCat();
 
   int GetAge() const { return itsAge; }
@@ -41,7 +41,7 @@ int main()
 
   int age = 5;
   Frisky.SetAge(age);
-  std::cout << "Frisky is << Frisky.GetAge()
+  std::cout << "Frisky is " << Frisky.GetAge()
             << " years old\n";
   
   std::cout << "Calling FunctionTwo...\n";
