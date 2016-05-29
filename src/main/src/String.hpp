@@ -14,7 +14,7 @@ public:
   char& operator[](int offset);
   char operator[](int offset) const;
   String operator+(const String&);
-  void operator+=(const String*);
+  void operator+=(const String&);
   String& operator= (const String &);
 
   // general accessors
