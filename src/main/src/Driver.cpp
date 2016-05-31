@@ -160,7 +160,7 @@ void String::operator+=(const String& rhs)
 // int String::ConstructorCoutn = 0;
 
 std::ostream& operator<<(std::ostream& stream, 
-                       String& new String)
+                       String& newString)
 {
   stream << newString.getString();
   return stream;
@@ -189,3 +189,85 @@ private:
   String addressString;
   String displayString;
 };
+
+std::ostream& operator<<
+  (std::ostream& stream, pAddress& address)
+{
+  stream << address.getDisplayString();
+  return stream;
+}
+
+class PostMasterMessage
+{
+public:
+// PostMasterMessage();
+
+  PostMasterMessage(const pAddress& newSender,
+                    const pAddress& newRecipient,
+                    const String& newSubject,
+                    const pDate& newCreationDate);
+
+  ~PostMasterMessage() {}
+
+  void Edit(); // invokes editor on this message
+
+  pAddress& getSender() { return sender; }
+  pAddress& getRecipient() { return recipient; }
+  String& getSubject() { return subject; }
+  // void setSender(pAddress&);
+  // other member accessors
+
+  // operator functions here, including operator equals
+  // and conversion routines to turn PostMaster messages
+  // into messages of other formats.
+
+private:
+  pAddress sender;
+  pAddress recipient;
+  String subject;
+  pDate creationDate;
+  pDate lastModDate;
+  pDate receiptDate;
+  pDate firstReadDate;
+  pDate lastReadDate;
+};
+
+PostMasterMessage::PostMasterMessage(
+  const pAddress& newSender,
+  const pAddress& newRecipient,
+  const String& newSubject,
+  const pDate& newCreationDate):
+  sender(newSender),
+  recipient(newRecipient),
+  subject(newSubject),
+  creationDate(newCreationDate),
+  lastModDate(newCreationDate),
+  firstReadDate(0),
+  lastReadDate(0)
+{
+  std::cout << "Postmaster message created. \n";
+}
+
+void PostMasterMessage::Edit()
+{
+  std::cout << "Postmaster message edit funciton called\n";
+}
+
+
+int main()
+{
+  pAddress sender(
+      PostMaster, "jason@abc.com", "Jason");
+  pAddress recipient(
+      PostMaster, "lukas@abc.com", "Lukas");
+  PostMasterMessage postMasterMessage(
+      sender, recipient, "Greetings", 0);
+  std::cout << "Message review... \n";
+  std::cout << "From:\t\t"
+      << postMasterMessage.getSender() << "\n";
+  std::cout << "To:\t\t"
+      << postMasterMessage.getRecipient() << "\n";
+  std::cout << "Subject:\t"
+      << postMasterMessage.getSubject() << "\n";
+  return 0;
+}
