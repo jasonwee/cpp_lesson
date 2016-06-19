@@ -1,82 +1,71 @@
-// https://www.hackerrank.com/challenges/kaprekar-numbers?h_r=next-challenge&h_v=zen
-
 #include <cmath>
 #include <cstdio>
-#include <list>
+#include <vector>
 #include <iostream>
 #include <algorithm>
 
+
 using namespace std;
 
-unsigned int getLength(int n);
+// https://www.hackerrank.com/challenges/kaprekar-numbers?h_r=next-challenge&h_v=zen
 
-int main() {
-  // n > 0
-  // d > 0
-  // r right
-  // l left
-  // l = d -1 
-  // l + r = n
-  //
-  //45 ^^ 2 = 2025
-  //20 + 25 = 45
-  //
-  // p > 0
-  // q > 0
-  // p < q
-  // 0 < p < q < 100 000
-  //          2147483 647
-  //           10000000000          
- /*  
-  1 = 1 X 1 =   1 ~> 1   = 1 yes
-  2 = 2 x 2 =   4 ~> 4  != 2 no
-  3 = 3 x 3 =   9 ~> 9  != 3 no
-  4 = 4 x 4 =  16 ~> 7  != 4 no
-  5 = 5 x 5 =  25 ~> 6  != 5 no
-  6 = 6 x 6 =  36 ~> 9  != 6 no
-  7 = 7 x 7 =  49 ~> 13 != 7 no
-  8 = 8 x 8 =  64 ~> 10 != 8 no
-  9 = 9 x 9 =  81 ~> 9  != 9 no
-*/
+vector<int> numToArray(unsigned long long n){
+    vector<int>arr;
 
-  int p = 0;
-  int q = 0;
-  list<int> res; 
-
-  cin >> p;
-  cin >> q;
-
-  for (p ;p <= q; p++) {
-    int tmp = p * p;
-    //cout << tmp << " ";
-    
-    int len = getLength(tmp);
-    //cout << len << endl;
-    
-    if (len % 2 == 0) {
-      cout << "even " << len;
-      res.push_back(p);
-    } else {
-      cout << "odd " << len;
-      res.push_back(p);
+    while ( n != 0) {
+        arr.push_back(n%10);
+        n /= 10;
     }
-    cout << endl;
-  }
-
-  for(list<int>::iterator list_iter = res.begin(); list_iter != res.end(); list_iter++)
-  {
-    cout << *list_iter << endl;
-  }
-  return 0;
+    reverse(arr.begin(),arr.end());
+    return arr;
 }
 
-unsigned int getLength(int n) {
-  unsigned int number_of_digits = 0;
+bool isKaprekar(int origin, vector<int> nums){
+    int mid = ceil((double)nums.size() / 2);
 
-  do {
-     ++number_of_digits; 
-     n /= 10;
-  } while (n);
+    int leftLen = nums.size() - mid;
+    int rightLen = mid;
 
-  return number_of_digits;
+    int lsum = 0;
+    int rsum = 0;
+
+    int lmult = pow(10,leftLen - 1);
+    int rmult = pow(10,rightLen - 1);
+    for (int i = 0; i < nums.size(); i++) {
+        if (i < leftLen){
+            lsum += nums[i]*lmult;
+            lmult /= 10;
+        }
+        else{
+            rsum += nums[i]*rmult;
+            rmult /= 10;
+        }
+    }
+
+    return origin == lsum + rsum;
+
+}
+
+int main() {
+
+    int p, q;
+    cin >> p >> q;
+
+    vector<int> numbers;
+
+    for (p; p <=q; p++) {
+        if (isKaprekar(p,numToArray(pow(p,2))))
+            numbers.push_back(p);
+    }
+
+    if (numbers.size() == 0) {
+        cout << "INVALID RANGE" << endl;
+    } else {
+      for (int i = 0; i < numbers.size(); i++) {
+        cout << numbers[i] << " ";
+      }
+      cout << endl;
+    }
+
+    return 0;
 }
