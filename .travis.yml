@@ -1,4 +1,6 @@
 language: cpp
 
+install: automake
+
 notifications:
   slack: just6fun:Eh0j5aOJi6d7bgPzRuZNd7JO
