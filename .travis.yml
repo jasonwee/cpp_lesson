@@ -1,6 +1,6 @@
 language: cpp
 
-install: automake
+before_script: autoreconf -f -i
 
 notifications:
   slack: just6fun:Eh0j5aOJi6d7bgPzRuZNd7JO
